@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Granted</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      background-color: #000;
+      color: #33ff33;
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      margin: 0;
+      padding: 20px;
+    }
+    #terminal {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    .prompt {
+      display: inline-block;
+    }
+    #cliInput {
+      background: none;
+      border: none;
+      color: #33ff33;
+      font: inherit;
+      outline: none;
+      width: 90%;
+    }
+    .cursor {
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal">
+    <pre id="output">Welcome to loveOS
+Target: my heart
+Attacker: my bear
+Type 'help' to begin
+</pre>
+    <div><span class="prompt">&gt;</span><input id="cliInput" autocomplete="off" autofocus /></div>
+  </div>
+  <script>
+    const output = document.getElementById("output");
+    const input = document.getElementById("cliInput");
+
+    const responses = {
+      help:
+        "Available commands:\n" +
+        "scan --type=full --target=192.168.love\n" +
+        "running script ./infiltrate.sh\n" +
+        "compiling custom exploit: hugOverflow.c\n" +
+        "executing ./hugOverflow\n" +
+        "cat /etc/relationship/status\n" +
+        "curl -X POST https://mybear.love/api/kiss\n" +
+        "cat reasons.txt\n" +
+        "sudo kiss --force\n" +
+        "./log_off.sh",
+
+      "scan --type=full --target=192.168.love":
+        "[+] Emotional vulnerability detected at 192.168.love\n" +
+        "[+] Open ports found:\n" +
+        "  • 22/tcp – ssh (secure shell to my heart)\n" +
+        "  • 443/tcp – https (Heart Transfer Protocol Secure)\n" +
+        "  • 69/tcp – mysterious & highly sensitive (access denied)",
+
+      "running script ./infiltrate.sh":
+        "[*] Logging in as root user...\n" +
+        "[*] Injecting warmth, admiration, respect...\n" +
+        "[*] Holding connection...\n" +
+        "[*] Timeout set to: never",
+
+      "compiling custom exploit: hugoverflow.c":
+        "[+] Build complete.",
+
+      "executing ./hugOverflow":
+        "💥 Buffer overflow triggered: infinite affection leak",
+
+      "cat /etc/relationship/status":
+        "status=\"official mamankiz\"",
+
+      "curl -x post https://mybear.love/api/kiss":
+        "HTTP 200 OK – Response: Initiating long-lasting connection...",
+
+      "cat reasons.txt":
+        "• you are the root user of my heart\n" +
+        "• every second with you is a privilege escalation\n" +
+        "• your laugh is my favorite exploit\n" +
+        "• you bypass all my defenses\n" +
+        "• you deserve a CVE for cuteness\n" +
+        "• You patched every insecure part of me\n" +
+        "• Your smile triggers my IDS (Intense Desire System)\n" +
+        "• you're the best security for our family",
+
+      "sudo kiss --force":
+        "[+] Root privileges granted. Full access confirmed.",
+
+      "./log_off.sh":
+        "[Session closed — but love persists]"
+    };
+
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        const command = input.value.trim();
+        output.innerHTML += `> ${command}\n`;
+        const response = responses[command.toLowerCase()];
+        if (response) {
+          output.innerHTML += `${response}\n`;
+        } else {
+          output.innerHTML += `Command not found: ${command}\n`;
+        }
+        input.value = "";
+        window.scrollTo(0, document.body.scrollHeight);
+      }
+    });
+  </script>
+</body>
+</html>
