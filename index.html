@@ -45,8 +45,7 @@
     <pre id="output">Welcome to loveOS
 Target: my heart
 Attacker: my bear
-Type 'help' to begin
-</pre>
+Type 'help' to begin</pre>
     <div><span class="prompt">&gt;</span><input id="cliInput" autocomplete="off" autofocus /></div>
   </div>
   <script>
@@ -57,14 +56,15 @@ Type 'help' to begin
       help:
         "Available commands:\n" +
         "scan --type=full --target=192.168.love\n" +
-        "running script ./infiltrate.sh\n" +
+        "./infiltrate.sh\n" +
         "compiling custom exploit: hugOverflow.c\n" +
         "executing ./hugOverflow\n" +
         "cat /etc/relationship/status\n" +
         "curl -X POST https://mybear.love/api/kiss\n" +
         "cat reasons.txt\n" +
         "sudo kiss --force\n" +
-        "./log_off.sh",
+        "./log_off.sh\n" +
+        "nslookup myheart.com",
 
       "scan --type=full --target=192.168.love":
         "[+] Emotional vulnerability detected at 192.168.love\n" +
@@ -73,7 +73,7 @@ Type 'help' to begin
         "  • 443/tcp – https (Heart Transfer Protocol Secure)\n" +
         "  • 69/tcp – mysterious & highly sensitive (access denied)",
 
-      "running script ./infiltrate.sh":
+      "./infiltrate.sh":
         "[*] Logging in as root user...\n" +
         "[*] Injecting warmth, admiration, respect...\n" +
         "[*] Holding connection...\n" +
@@ -105,7 +105,50 @@ Type 'help' to begin
         "[+] Root privileges granted. Full access confirmed.",
 
       "./log_off.sh":
-        "[Session closed — but love persists]"
+        "[Session closed — but love persists]\n" +
+        "  \u2665\u2665\u2665\u2665\u2665    \u2665\u2665\u2665\u2665\u2665\n" +
+        " \u2665\u2665\u2665\u2665\u2665\u2665  \u2665\u2665\u2665\u2665\u2665\u2665\n" +
+        " \u2665\u2665\u2665\u2665\u2665\u2665\u2665\u2665\u2665\u2665\u2665\u2665\n" +
+        "  \u2665\u2665\u2665\u2665\u2665\u2665\u2665\u2665\u2665\u2665\n" +
+        "   \u2665\u2665\u2665\u2665\u2665\u2665\u2665\n" +
+        "     \u2665\u2665\u2665\u2665\n" +
+        "       \u2665\u2665\n" +
+        "         \u2665",
+
+      "ls":
+        "heart/",
+
+      "cd heart/":
+        "heart.txt",
+
+      "cat heart.txt":
+        "🔐 Heart Key: d3v0t10n_4ev3r_h34rt_h4sh 💚",
+
+      "ls -la":
+        ".port69.txt\nheart/",
+
+      "cat .port69.txt":
+        "social engineering: offline",
+
+      "whoami":
+        "you are my bear",
+
+      "pwd":
+        "/home/myheart",
+
+      "ps aux":
+        "USER       PID  %CPU %MEM    TIME+  COMMAND\n" +
+        "root         1  0.0  0.1  00:00:01  love --persistent\n" +
+        "root         2  0.0  0.1  00:00:01  attention --daily-check\n" +
+        "root         3  0.0  0.1  00:00:01  care --level=max\n" +
+        "root         4  0.0  0.0  00:00:01  trust --secure-mode\n" +
+        "root         5  0.0  0.0  00:00:01  cuddles --auto",
+
+      "nslookup myheart.com":
+        "Server:  dns.loveOS.local\n" +
+        "Address:  192.168.4evr#53\n\n" +
+        "Name:    myheart.com\n" +
+        "Address:  127.0.0.1 (loopback to you 💚)"
     };
 
     input.addEventListener("keydown", function (e) {
